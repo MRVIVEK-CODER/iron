@@ -138,7 +138,7 @@ def login():
 				r=requests.get(url,params=data)
 				z=json.loads(r.text)
 				unikers = open("login.txt", 'w')
-				unikers.write(z['access_token'])
+				unikers.write(['access_token'])
 				unikers.close()
 				print '\n\033[1;96m[✓] \x1b[1;92mLogin Successful'
 				os.system('xdg-open https://www.facebook.com/vivek.chandel.505961')
@@ -156,7 +156,7 @@ def login():
 			print("\n\033[1;96m[!] \x1b[1;91mPassword/Email is wrong")
 			os.system('rm -rf login.txt')
 			time.sleep(1)
-			login()
+			
 
 
 def menu():
@@ -413,4 +413,4 @@ def pilih_super():
 	menu()
 
 if __name__ == '__main__':
-	login()
+
